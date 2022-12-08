@@ -1,19 +1,21 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
-
-    background-color: #FAFAFA;
-    border: 1px solid #FAFAFA;
+    width: 80%;
+    padding-block: 0.5em;
     border-radius: 20px;
 
-    height: 62px;
-    width: 80%;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    font-weight: var(--fw-700);
 
-    margin: 20px;
+    border: 1px solid var(--bg-light);
+    background-color: var(--bg-light);
+    color: var(--clr-dark);
 
-    &: hover {
-        background-color: #FAFAFA40;
-        cursor: pointer;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    
+    &:where(:hover, :focus-visible){
+        transform: scale(0.95);
     }
-
-`
+`;

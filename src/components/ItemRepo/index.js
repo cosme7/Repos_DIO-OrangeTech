@@ -1,22 +1,26 @@
 import React from 'react'
+import Trash from '../../assets/trash-can.png'
+import * as S from './styles';
 
-import { ItemContainer } from './styles';
-
-function ItemRepo({repo, handleRemoveRepo}) {
+export default function ItemRepo({repo, handleRemoveRepo}) {
 
   const handleRemove = () => {
     handleRemoveRepo(repo.id)
   }
 
   return (
-    <ItemContainer onClick={handleRemove}>
+    <S.ItemContainer >
         <h3>{repo.name}</h3>
         <p>{repo.full_name}</p>
-        <a href={repo.html_url} rel="noreferrer" target="_blank">Ver repositório</a><br />
-        <a href="#"  rel="noreferrer" className="remover">Remover</a>
+        <S.BtnBox>
+          <button>
+            <a href={repo.html_url} rel="noreferrer" target="_blank">Repositório</a>
+          </button>
+          <button onClick={handleRemove} className="remover">
+            <img src={Trash} alt="Delete" title="Delete" />
+          </button>
+        </S.BtnBox>
         <hr />
-    </ItemContainer>
+    </S.ItemContainer>
   )
-}
-
-export default ItemRepo;
+};

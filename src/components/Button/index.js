@@ -1,13 +1,10 @@
 import React from 'react'
+import * as S from './styles';
 
-import { ButtonContainer } from './styles';
-
-function Button({onClick}) {
+export default function Button({onClick}) {
   return (
-    <ButtonContainer onClick={onClick}>
+    <S.ButtonContainer onClick={onClick}>
        Buscar
-    </ButtonContainer>
-  )
-}
-
-export default Button
+    </S.ButtonContainer>
+  );
+};

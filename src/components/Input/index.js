@@ -1,13 +1,10 @@
 import React from 'react'
+import * as S from './styles';
 
-import { InputContainer } from './styles';
-
-function Input({value, onChange}) {
+export default function Input({value, onChange}) {
   return (
-    <InputContainer>
-        <input value={value} onChange={onChange}/>
-    </InputContainer>
-  )
-}
-
-export default Input
+    <S.InputContainer>
+        <input value={value} onChange={onChange} placeholder="users/repoName"/>
+    </S.InputContainer>
+  );
+};
